@@ -1,11 +1,12 @@
 ---
 title: "Macquarie R Users Group - An Introduction to R (written in R Notebook (Markdown))"
 output:
+  html_document:
+    df_print: paged
   html_notebook:
     fig_height: 4
     fig_width: 6
-  html_document:
-    df_print: paged
+  pdf_document: default
 ---
 ### [Link](https://prezi.com/view/eIAklW1cQmSdwSKvIC3y) to the presentation
 
@@ -390,9 +391,3 @@ irisdata
 * How to manipulate data?
 * Your first data analysis
 * How to proceed on your own
-
-# saving current rmd file as html
-
-```{r}
-rmarkdown::render("RUsersGroup_BeginnerSession_2019.Rmd")
-```        
