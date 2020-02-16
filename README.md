@@ -12,4 +12,10 @@ I hope you are as excited as me to get started with R. Please read this document
 **Prerequisites**
 
 * No pre-knowledge needed
-* However, please install the latest versions of R and RStudio. Refer to 
+* However, please install the latest versions of R and RStudio. Look into the following [document](https://github.com/Stan125/RIntroduction/blob/master/RUsersGroup_BeginnerSession_2019.pdf) and follow the steps to achieve this.
+
+**Workshop Process**
+
+This is a hands-on workhop. Me and James will talk about some stuff, and then we will let you try things out.
+
+**Have fun!**
