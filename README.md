@@ -7,9 +7,9 @@ I hope you are as excited as me to get started with R. Please read this document
 **Where and When**
 
 * Thursday, 27th February from 2-4 p.m. (90 minutes workshop, 30 minute questions)
-* Room: M4.02 in he public library
+* Room: M4.02 in the public library
 
 **Prerequisites**
 
 * No pre-knowledge needed
-* However, please install the latest versions of R and RStudio.
+* However, please install the latest versions of R and RStudio. Refer to 

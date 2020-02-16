@@ -1,12 +1,12 @@
 ---
 title: "Macquarie R Users Group - An Introduction to R (written in R Notebook (Markdown))"
 output:
-  html_document:
-    df_print: paged
+  pdf_document: default
   html_notebook:
     fig_height: 4
     fig_width: 6
-  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 ### [Link](https://prezi.com/view/eIAklW1cQmSdwSKvIC3y) to the presentation
 
