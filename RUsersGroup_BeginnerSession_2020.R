@@ -1,4 +1,4 @@
-# "Macquarie R Users Group - An Introduction to R 
+# Macquarie R Users Group - An Introduction to R 2020
 
 ## Section 1
 
@@ -20,7 +20,7 @@ a <- 1+2 # here R works ike a calculator
 a        # print a to see what it contains
 
 
-# 2. We Use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
+# 2. We use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
 
 x <- c(1,2,3,4) # 'c' is a function that combines values into the vector x (object), the numbers are arguments
 
@@ -59,7 +59,7 @@ c <- cbind(seq_a,seq_b)
 class(c) 
 # class() can figure out if you are working with vectors, matrices, dataframes, lists etc....it can do more but this is all we need for now.
 
-#Note: The counterpart to cbind() is rbind() if you would like to connect rows instead of columns.
+# Note: The counterpart to cbind() is rbind() if you would like to connect rows instead of columns.
 
 # 9. Plot 'c' by using plot()
 
@@ -100,7 +100,7 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # Create new script: File > New File > R script
 # Start coding
 
-1. Let's import our data and see what it looks like
+# 1. Let's import our data and see what it looks like
 
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
 # it is the case with iris and PlantGrowth datasets, so they can be loaded using:
@@ -113,11 +113,11 @@ irisdata <- read.csv("Input/irisdata.csv")
 irisdata
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
-2. We can easily call some summary stats now.
+# 2. We can easily call some summary stats now.
 
 summary(irisdata)
 
-3. We can also access specific values in this dataset. For vectors, matrices and dataframes we can use "[]", and the "$" is useful only for dataframes. If we use "[]" then we must think of it like this: [rows,columns]
+# 3. We can also access specific values in this dataset. For vectors, matrices and dataframes we can use "[]", and the "$" is useful only for dataframes. If we use "[]" then we must think of it like this: [rows,columns]
 
 irisdata[,1] # all values in column 1
 
@@ -139,7 +139,7 @@ irisdata[1, 1:7] # first row only of values in columns 1 to 7
 dim(irisdata) #shows dimensions 
 
 
-4. If we make any changes to our data, we can save our new data in a spreadsheet.
+# 4. If we make any changes to our data, we can save our new data in a spreadsheet.
 
 write.csv(irisdata, 'New irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
 write.csv(irisdata, 'New irisdata incl rownames.csv')
@@ -168,11 +168,11 @@ boxplot(weight~group, plant.df)
 # 4. Create a folder to store the results. 
 
 # this line can be different for Mac users
-dir.create("output")
+dir.create("Output")
 
 # And save it as a .pdf file in the output folder.
 
-pdf('output/My Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
+pdf('Output/My_Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
 boxplot(weight~group, plant.df, ylab='Dried weight of plants [g]')
 dev.off() # close window to finish saving
 

@@ -8,7 +8,6 @@ output:
   html_document:
     df_print: paged
 ---
-### [Link](https://prezi.com/view/eIAklW1cQmSdwSKvIC3y) to the presentation
 
 ### Prerequisite
 
