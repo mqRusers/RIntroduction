@@ -93,19 +93,21 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 5. Plotting.
 # 6. Not being scared of coding!
 
-
+# Save your current script: File > Save 
 # Create a new project folder for our R users introduction course: File/R project > New project > New directory > Browse and name it: 'My first R project'.
 # Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
-# Move our data to input folder
-# Create new script: File > New File > R script
-# Start coding
+# Move our data to input folder and move our script RUsersGroup_BeginnerSession_2020.R to the script folder
+
+
+# We can also create new scripts: File > New File > R script
+
 
 # 1. Let's import our data and see what it looks like
 
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
 # it is the case with iris and PlantGrowth datasets, so they can be loaded using:
 data(iris)
-data(PlantGrowth)
+data(plantgrowth)
 
 # or
 
@@ -150,15 +152,15 @@ write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 ### Last part! Our first data analysis!
 
-# 1. Now we want to read in a new dataset called PlantGrowth.csv found in the input folder. Give this a go your yourself!
+# 1. Now we want to read in a new dataset called plantgrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("") 
-
+plant.df <- read.csv("input/plantGrowth.csv") 
+plant.df
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
 
 plant.df$group <- factor(plant.df$group,
-  labels = c("Control", "Treatment 1", "Treatment 2"))
+                         labels = c("Control", "Treatment 1", "Treatment 2"))
 
 # 3. Visualise our data with a boxplot. 
 
@@ -181,6 +183,7 @@ dev.off() # close window to finish saving
 
 plant.mod1 = lm(weight ~ group, data = plant.df) 
 # we're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
+# Variable on the left-hand side of a tilde ( ~ ) (weight) is the dependent variable, while the right-hand side are the independent variables
 
 summary(plant.mod1) # summary() extracts some of this data and prints it out neatly for us
 
@@ -203,22 +206,22 @@ irisdata
 
 ## More Information
 
-# Resources to learn R coding##
-        # Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
-        # Package ([Swirl](http://swirlstats.com/))
-        
+# Resources to learn R coding
+# Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
+# Package ([Swirl](http://swirlstats.com/))
+
 # Resources to learn plotting with R Base Graphics##
-        # R Graph Cookbook - Hrishi V. Mittal
-        
+# R Graph Cookbook - Hrishi V. Mittal
+
 # Resources to learn plotting with ggplot2##
-        # ggplot2 (Use R!) - Hadley Wickham
-        
+# ggplot2 (Use R!) - Hadley Wickham
+
 # Resources to learn data manipulation in R##
-        # Data manipulation with R (Use R!) - Phil Spector
-        
+# Data manipulation with R (Use R!) - Phil Spector
+
 # Resources to learn stats in R##
-        # Introductory statistics with R (Use R!) - Peter Dalgaard
-        
+# Introductory statistics with R (Use R!) - Peter Dalgaard
+
 ## What we have learned
 
 # Get familiar with R Studio and the differences to R
