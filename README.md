@@ -54,8 +54,8 @@ To check the version of R you are using, start RStudio and the first thing that 
 **If you don’t have R and RStudio installed:**
 Download R from the [CRAN website](http://cran.r-project.org/bin/macosx/).
 Select the `.pkg` file for the latest R version
-Double click on the downloaded file to install R
-Go to the [RStudio download page](https://www.rstudio.com/products/rstudio/download/#download)
+Once downloaded double click on the file to install R. 
+To dowload Rstudio go to the [RStudio download page](https://www.rstudio.com/products/rstudio/download/#download)
 Under Installers select **RStudio x.yy.zzz - Mac OS X 10.6+ (64-bit)** (where x, y, and z represent version numbers)
 Double click the file to install RStudio
 Once it’s installed, open RStudio to make sure it works and you don’t get any error messages.
