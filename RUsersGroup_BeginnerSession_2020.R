@@ -1,4 +1,4 @@
-# "Macquarie R Users Group - An Introduction to R 
+# Macquarie R Users Group - An Introduction to R 2020
 
 ## Section 1
 
@@ -20,7 +20,7 @@ a <- 1+2 # here R works ike a calculator
 a        # print a to see what it contains
 
 
-# 2. We Use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
+# 2. We use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
 
 x <- c(1,2,3,4) # 'c' is a function that combines values into the vector x (object), the numbers are arguments
 
@@ -59,7 +59,7 @@ c <- cbind(seq_a,seq_b)
 class(c) 
 # class() can figure out if you are working with vectors, matrices, dataframes, lists etc....it can do more but this is all we need for now.
 
-#Note: The counterpart to cbind() is rbind() if you would like to connect rows instead of columns.
+# Note: The counterpart to cbind() is rbind() if you would like to connect rows instead of columns.
 
 # 9. Plot 'c' by using plot()
 
@@ -93,31 +93,33 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 5. Plotting.
 # 6. Not being scared of coding!
 
+# Save your current script: File > Save 
+# Create a new project folder for our R users introduction course: File/R project > New project > New directory > Browse and name it: 'My first R project'.
+# Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
+# Move our data to input folder and move our script RUsersGroup_BeginnerSession_2020.R to the script folder
 
-# Create a new project folder for our R users introduction course: R project > New project > New directory > Browse and name it: 'My first R project'.
-# Create 3 subfolders within the project and name them 'Input', 'Output' and 'Scripts' 
-# Move our data to input folder
-# Create new script: File > New File > R script
-# Start coding
 
-1. Let's import our data and see what it looks like
+# We can also create new scripts: File > New File > R script
+
+
+# 1. Let's import our data and see what it looks like
 
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
 # it is the case with iris and PlantGrowth datasets, so they can be loaded using:
 data(iris)
-data(PlantGrowth)
+data(plantgrowth)
 
 # or
 
-irisdata <- read.csv("Input/irisdata.csv") 
+irisdata <- read.csv("input/irisdata.csv") 
 irisdata
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
-2. We can easily call some summary stats now.
+# 2. We can easily call some summary stats now.
 
 summary(irisdata)
 
-3. We can also access specific values in this dataset. For vectors, matrices and dataframes we can use "[]", and the "$" is useful only for dataframes. If we use "[]" then we must think of it like this: [rows,columns]
+# 3. We can also access specific values in this dataset. For vectors, matrices and dataframes we can use "[]", and the "$" is useful only for dataframes. If we use "[]" then we must think of it like this: [rows,columns]
 
 irisdata[,1] # all values in column 1
 
@@ -132,33 +134,49 @@ irisdata['Species'] # all values in column with column name 'Species'
 
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 
-as.matrix(irisdata)$Sepal.Length # this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+
+as.matrix(irisdata)$Sepal.Length
+
+
+as.matrix(irisdata)[,2:5]
+
 
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
 
+
 dim(irisdata) #shows dimensions 
 
+# What is the X column?
+irisdata
 
-4. If we make any changes to our data, we can save our new data in a spreadsheet.
+# We can remove this by accessing only values from columns 2 to 6
 
-write.csv(irisdata, 'New irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
-write.csv(irisdata, 'New irisdata incl rownames.csv')
+irisdata[,2:6]
+
+# There is another way to do this by selecting the column we would like to remove using a minus "-" 
+# Give this a go below and assign it to the object called iris_without_rownames
 
 
-##Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!##
+iris_without_rownames <- irisdata[,-1]
+iris_without_rownames
 
+
+# 4. If we make any changes to our data, we can save our new data in a spreadsheet.
+
+write.csv(irisdata, 'output/new_irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
+write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 ### Last part! Our first data analysis!
 
-# 1. Read in a new dataset in csv 
+# 1. Now we want to read in a new dataset called plantgrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("Input/PlantGrowth.csv") 
-
+plant.df <- read.csv("input/plantGrowth.csv") 
+plant.df
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
 
 plant.df$group <- factor(plant.df$group,
-  labels = c("Control", "Treatment 1", "Treatment 2"))
+                         labels = c("Control", "Treatment 1", "Treatment 2"))
 
 # 3. Visualise our data with a boxplot. 
 
@@ -168,11 +186,11 @@ boxplot(weight~group, plant.df)
 # 4. Create a folder to store the results. 
 
 # this line can be different for Mac users
-dir.create("output")
+dir.create("output/plots")
 
 # And save it as a .pdf file in the output folder.
 
-pdf('output/My Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
+pdf('output/plots/my_boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
 boxplot(weight~group, plant.df, ylab='Dried weight of plants [g]')
 dev.off() # close window to finish saving
 
@@ -181,6 +199,7 @@ dev.off() # close window to finish saving
 
 plant.mod1 = lm(weight ~ group, data = plant.df) 
 # we're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
+# Variable on the left-hand side of a tilde ( ~ ) (weight) is the dependent variable, while the right-hand side are the independent variables
 
 summary(plant.mod1) # summary() extracts some of this data and prints it out neatly for us
 
@@ -188,37 +207,40 @@ anova(plant.mod1)
 
 
 # 5. There are hundreds of packages in R that have ready functions for us to use. All you need to do is look up which package you need, install it and load it into R. 
-# In our case, as we ran a linear model, we probably want to visualise our model estimates instead of just using a boxplot. Let us install and load a new package that allows to easily do this. 
 
+# Here we will pratice installing a package called readr
+# You can think of installing package like apps on your phone, you only need to install it once but need to load it each time you want to use it 
 
-# function to use an improved read.csv function
 #install.packages('readr') #install
 library(readr) #load
 
 # Now all we have to do is use a function within the newly loaded package!
+irisdata <- read.csv("input/irisdata.csv") #old
 
-irisdata <- read_csv("Input/irisdata.csv") 
+irisdata <- read_csv("input/irisdata.csv") #new
 irisdata
 
 
 ## More Information
 
-# Resources to learn R coding##
-        # Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
-        # Package ([Swirl](http://swirlstats.com/))
-        
+# R Cheatsheets https://rstudio.com/resources/cheatsheets/
+
+# Resources to learn R coding
+# Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
+# Package ([Swirl](http://swirlstats.com/))
+
 # Resources to learn plotting with R Base Graphics##
-        # R Graph Cookbook - Hrishi V. Mittal
-        
+# R Graph Cookbook - Hrishi V. Mittal
+
 # Resources to learn plotting with ggplot2##
-        # ggplot2 (Use R!) - Hadley Wickham
-        
+# ggplot2 (Use R!) - Hadley Wickham
+
 # Resources to learn data manipulation in R##
-        # Data manipulation with R (Use R!) - Phil Spector
-        
+# Data manipulation with R (Use R!) - Phil Spector
+
 # Resources to learn stats in R##
-        # Introductory statistics with R (Use R!) - Peter Dalgaard
-        
+# Introductory statistics with R (Use R!) - Peter Dalgaard
+
 ## What we have learned
 
 # Get familiar with R Studio and the differences to R
