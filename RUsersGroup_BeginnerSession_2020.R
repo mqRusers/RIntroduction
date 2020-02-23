@@ -207,22 +207,23 @@ anova(plant.mod1)
 
 
 # 5. There are hundreds of packages in R that have ready functions for us to use. All you need to do is look up which package you need, install it and load it into R. 
-# In our case, as we ran a linear model, we probably want to visualise our model estimates instead of just using a boxplot. Let us install and load a new package that allows to easily do this. 
 
+# Here we will pratice installing a package called readr
+# You can think of installing package like apps on your phone, you only need to install it once but need to load it each time you want to use it 
 
-# function to use an improved read.csv function
 #install.packages('readr') #install
 library(readr) #load
 
 # Now all we have to do is use a function within the newly loaded package!
+irisdata <- read.csv("input/irisdata.csv") #old
 
-irisdata <- read_csv("input/irisdata.csv") 
+irisdata <- read_csv("input/irisdata.csv") #new
 irisdata
 
 
 ## More Information
 
-# Add in R cheatsheets and the Xdatacamp courses
+# R Cheatsheets https://rstudio.com/resources/cheatsheets/
 
 # Resources to learn R coding
 # Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
