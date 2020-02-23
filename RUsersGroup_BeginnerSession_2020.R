@@ -94,8 +94,8 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 6. Not being scared of coding!
 
 
-# Create a new project folder for our R users introduction course: R project > New project > New directory > Browse and name it: 'My first R project'.
-# Create 3 subfolders within the project and name them 'Input', 'Output' and 'Scripts' 
+# Create a new project folder for our R users introduction course: File/R project > New project > New directory > Browse and name it: 'My first R project'.
+# Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
 # Move our data to input folder
 # Create new script: File > New File > R script
 # Start coding
@@ -109,7 +109,7 @@ data(PlantGrowth)
 
 # or
 
-irisdata <- read.csv("Input/irisdata.csv") 
+irisdata <- read.csv("input/irisdata.csv") 
 irisdata
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
@@ -141,18 +141,18 @@ dim(irisdata) #shows dimensions
 
 # 4. If we make any changes to our data, we can save our new data in a spreadsheet.
 
-write.csv(irisdata, 'New irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
-write.csv(irisdata, 'New irisdata incl rownames.csv')
+write.csv(irisdata, 'output/new_irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
+write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 
-##Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!##
+## Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!##
 
 
 ### Last part! Our first data analysis!
 
-# 1. Read in a new dataset in csv 
+# 1. Now we want to read in a new dataset called PlantGrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("Input/PlantGrowth.csv") 
+plant.df <- read.csv("") 
 
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -168,11 +168,11 @@ boxplot(weight~group, plant.df)
 # 4. Create a folder to store the results. 
 
 # this line can be different for Mac users
-dir.create("Output")
+dir.create("output/plots")
 
 # And save it as a .pdf file in the output folder.
 
-pdf('Output/My_Boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
+pdf('output/plots/my_boxplot.pdf', width = 20, height = 10 , paper = 'a4r')
 boxplot(weight~group, plant.df, ylab='Dried weight of plants [g]')
 dev.off() # close window to finish saving
 
@@ -197,7 +197,7 @@ library(readr) #load
 
 # Now all we have to do is use a function within the newly loaded package!
 
-irisdata <- read_csv("Input/irisdata.csv") 
+irisdata <- read_csv("input/irisdata.csv") 
 irisdata
 
 
