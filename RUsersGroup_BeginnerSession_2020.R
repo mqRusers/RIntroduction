@@ -134,21 +134,37 @@ irisdata['Species'] # all values in column with column name 'Species'
 
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 
-as.matrix(irisdata)$Sepal.Length # this won't work. atomic vectors = (logical, integer, double (sometimes called numeric), and character)
+
+as.matrix(irisdata)$Sepal.Length
+
+
+as.matrix(irisdata)[,2:5]
+
 
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
 
+
 dim(irisdata) #shows dimensions 
+
+# What is the X column?
+irisdata
+
+# We can remove this by accessing only values from columns 2 to 6
+
+irisdata[,2:6]
+
+# There is another way to do this by selecting the column we would like to remove using a minus "-" 
+# Give this a go below and assign it to the object called iris_without_rownames
+
+
+iris_without_rownames <- irisdata[,-1]
+iris_without_rownames
 
 
 # 4. If we make any changes to our data, we can save our new data in a spreadsheet.
 
 write.csv(irisdata, 'output/new_irisdata.csv', row.names=FALSE) # Why am I using row.names=FALSE?
 write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
-
-
-## Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!##
-
 
 ### Last part! Our first data analysis!
 
@@ -205,6 +221,8 @@ irisdata
 
 
 ## More Information
+
+# Add in R cheatsheets and the Xdatacamp courses
 
 # Resources to learn R coding
 # Book A Beginner's Guide to R (Use R!) - Alain Zuur, Elena Ieno and Eric Meesters
