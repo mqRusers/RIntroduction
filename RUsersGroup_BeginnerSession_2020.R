@@ -6,7 +6,7 @@
 
 ### Goals
 
-# 1. Getting comfortable with R Studio Interface and finding out what it is at all.
+# 1. Getting comfortable with R Studio Interface and finding out what it is all about.
 # 2. Using basic commands.
 # 3. Loading and saving data.
 # 4. Basic statistics.
@@ -15,8 +15,8 @@
 
 
 # 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
-
-a <- 1+2 # here R works ike a calculator
+ 
+a <- 1+2 # here R works like a calculator
 a        # print a to see what it contains
 
 
@@ -94,9 +94,10 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 6. Not being scared of coding!
 
 # Save your current script: File > Save 
-# Create a new project folder for our R users introduction course: File/R project > New project > New directory > Browse and name it: 'My first R project'.
+# Create a new project folder for our R users introduction course: File/R project > New project > New directory > New project > Browse and name it: 'My first R project'.
 # Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
-# Move our data to input folder and move our script RUsersGroup_BeginnerSession_2020.R to the script folder
+# Move both files datasets found within input folder from the original workshop folder to our new input folder we just created.
+# Move our script RUsersGroup_BeginnerSession_2020.R to the newly created script folder and reopen it
 
 
 # We can also create new scripts: File > New File > R script
