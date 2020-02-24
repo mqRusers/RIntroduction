@@ -60,6 +60,6 @@ The first thing you need to do is install R and R studio (instructions above) th
 - `RUsersGroup_BeginnerSession_2020.pdf` A handy pdf with the workshop script and code output 
 - `RUsersGroup_BeginnerSession_2020.Rmd` A markdown file which you wont need to use. 
 
-To start of open the workshop script in R (RUsersGroup_BeginnerSession_2020.R). It should automatically open in R.
+To start, open the workshop script in R (RUsersGroup_BeginnerSession_2020.R). It should open automatically in R.
 
 **Have fun!**
