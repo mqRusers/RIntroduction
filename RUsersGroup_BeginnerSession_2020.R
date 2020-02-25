@@ -106,9 +106,9 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 1. Let's import our data and see what it looks like
 
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
-# it is the case with iris and plantgrowth datasets, so they can be loaded using:
+# it is the case with iris and PlantGrowth datasets, so they can be loaded using:
 data(iris)
-data(plantgrowth)
+data(PlantGrowth)
 
 # or
 
@@ -179,7 +179,7 @@ write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 ### Last part! Our first data analysis!
 
-# 1. Now we want to read in a new dataset called plantgrowth.csv found in the input folder. Give this a go your yourself!
+# 1. Now we want to read in a new dataset called PlantGrowth.csv found in the input folder. Give this a go your yourself!
 
 plant.df <- read.csv("") 
 plant.df
