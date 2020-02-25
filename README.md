@@ -49,7 +49,7 @@ Under Installers select **RStudio x.yy.zzz - Mac OS X 10.6+ (64-bit)** (where x,
 Double click the file to install RStudio
 Once it’s installed, open RStudio to make sure it works and you don’t get any error messages.
 
-**Let's get started!**
+### Let's get started!
 
 The first thing you need to do is install R and R studio (instructions above) then you want to download all the files for this workshop from this github page to your computer. To do that click on the green **Clone or download** button to the right side of your screen and select **Download ZIP**. Unzip this folder and put it somewhere you can easily access. This folder contains the follow files:
 

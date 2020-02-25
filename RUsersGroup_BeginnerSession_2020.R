@@ -106,7 +106,7 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 1. Let's import our data and see what it looks like
 
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
-# it is the case with iris and PlantGrowth datasets, so they can be loaded using:
+# it is the case with iris and plantgrowth datasets, so they can be loaded using:
 data(iris)
 data(plantgrowth)
 
@@ -114,6 +114,14 @@ data(plantgrowth)
 
 irisdata <- read.csv("input/irisdata.csv") 
 irisdata
+
+# We used class to see how our object was structured e.g. vectors, matrices, dataframes. When working with dataframes we can use str() to find the class of each column
+
+str(irisdata)
+
+head(irisdata)
+tail(irisdata)
+
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
 # 2. We can easily call some summary stats now.
@@ -129,28 +137,29 @@ irisdata[1,1] # value at row 1, column 1
 
 irisdata[,1:3] # all values in columns 1 to 3
 
+irisdata[c(1,3,5), c(4,6)] # value at row 1, 3, and 5, column 4 and 6
 
 irisdata['Species'] # all values in column with column name 'Species'
 
 
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 
-
 as.matrix(irisdata)$Sepal.Length
-
+# this won't work, atomic vectors = (logical, integer, double (sometimes called numeric), and character)
 
 as.matrix(irisdata)[,2:5]
 
-
+#why does this not work? 
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
 
 
 dim(irisdata) #shows dimensions 
 
-# What is the X column?
+# What is the X column in irisdata?
+
 irisdata
 
-# We can remove this by accessing only values from columns 2 to 6
+# We can remove the X column by accessing only values from columns 2 to 6
 
 irisdata[,2:6]
 
@@ -158,9 +167,10 @@ irisdata[,2:6]
 # Give this a go below and assign it to the object called iris_without_rownames
 
 
-iris_without_rownames <- irisdata[,-1]
+iris_without_rownames <- irisdata[]
 iris_without_rownames
 
+# Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!**
 
 # 4. If we make any changes to our data, we can save our new data in a spreadsheet.
 
@@ -171,7 +181,7 @@ write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 # 1. Now we want to read in a new dataset called plantgrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("input/plantGrowth.csv") 
+plant.df <- read.csv("") 
 plant.df
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -198,13 +208,23 @@ dev.off() # close window to finish saving
 
 # 4. Start statistical analysis. This is a simple linear model with an ANOVA. 
 
-plant.mod1 = lm(weight ~ group, data = plant.df) 
-# we're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
+plant.mod1 <- lm(weight ~ group, data = plant.df) 
+
+# We're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
 # Variable on the left-hand side of a tilde ( ~ ) (weight) is the dependent variable, while the right-hand side are the independent variables
+
+class(weight ~ group) # this is our formula
+
+plant.mod1
+
 
 summary(plant.mod1) # summary() extracts some of this data and prints it out neatly for us
 
 anova(plant.mod1)
+
+names(plant.mod1)
+
+plant.mod1$coefficients
 
 
 # 5. There are hundreds of packages in R that have ready functions for us to use. All you need to do is look up which package you need, install it and load it into R. 
