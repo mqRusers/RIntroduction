@@ -1,8 +1,94 @@
 # Macquarie R Users Group - An Introduction to R 2020
 
-## Section 1
 
 # Note: everything after # is considered a comment (simple notes), NOT code.
+
+### What is R?
+
+# R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS." (CRAN)
+
+# In its broadest definition, R is a computer language that allows the user to program algorithms and use tools that have been programmed by others." (Zuur et al 2009 - A Beginner's Guide to R:14)
+
+# But what can it actually do?
+
+# R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
+# Manipulate data
+# Conduct any statistical test
+# Import software 'packages' with specialised functions (more on this later)
+# Automate analyses
+# Design simple or complicated graphs
+
+
+# Why you should use it?
+
+# It is free and open-source
+# R has been receiving contributions from many programmers around the globe
+# [Listed as 3rd most used languages in Data Science](https://businessoverbroadway.com/2019/01/13/programming-languages-most-used-and-recommended-by-data-scientists/)
+# Massive community for online support
+# Very specific problems are mostly addressed with a package
+# It is widely used with many books published in the last years
+
+
+# Awesome! Why is not everyone using it?
+
+# A bit of a learning curve
+# Coding necessary (eh!)
+
+# BUT 
+
+# The most basic syntax (grammar) can be used for most of the things in R
+# R studio makes it easier to code in R, providing a user friendly interface
+# Once you get used to programming you can adopt new languages easier
+
+# There are a lot of online courses, videos and texts available for understanding R, its packages etc.
+
+
+#Let's have a look at R Studio
+
+# Console: your code is run here and you will see the results of your coding.
+# R-Script: your code is written and saved here, just like in a normal text-document.
+# Environment: all the loaded data and objects are listed here, you can even take a look at your data tables or the structure of your data.
+# History: shows the history of your executed code.
+# Files: what is in your source folder, i.e. is my data table in the folder?
+# Plots: this is where your plots will be shown, you can also export them from here (but there are better ways).
+# Packages: load and search for new packages and your installed packages are listed here.
+# Help: look for help or specific vignettes (support documents) for each package. Also access via ?'function'
+# Viewer: can be used to view local web content for web graphics generated using packages like googleVis, htmlwidgets, and rCharts, or even a local web application created using Shiny, Rook, or OpenCPU.
+
+# R-studio gives you a more intuitive interface and takes the scariness out of coding. It also provides functions that simplify the process of developing your code. 'Tab completion' is one of such function.
+
+
+# Some basic R syntax: objects and functions and arguments
+
+# output<-function1(argument1, argument2, ...) + function2(argument)
+
+# flat_white <- froth(milk, hot) + extract(coffee)
+# flat_white = froth(milk, hot) + extract(coffee)
+
+# verb(argument)
+# argument can be a "noun" (being acted upon) or an "adverb" (modifying its behavior)
+
+# Example1: boiling milk normally
+# boiled_milk <- boil (milk)
+
+# Example2: boiling milk for a long time
+# boiled_milk <- boil (milk, long_time)
+ 
+# froth() and extract() are *functions*, milk, hot and coffee are *arguments*
+
+# functions are sets of instructions used to do something to arguments. They can be stored in an *object* (flat_white). Objects can be used as arguments.
+
+# arguments are used to tell functions what *objects* to act on, and any details of how to perform the action
+
+# Functions need arguments to fulfill the purpose they were designed for. e.g. froth() needs to know what kind of milk to froth and how hot to make it.
+
+# packages are precoded sets of instructions (functions) that were written by someone and are available for everyone to use*
+
+
+
+
+
+## Section 1
 
 ### Goals
 
@@ -12,7 +98,6 @@
 # 4. Basic statistics.
 # 5. Plotting.
 # 6. Not being scared of coding!
-
 
 # 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
  
