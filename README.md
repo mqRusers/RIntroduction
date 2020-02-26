@@ -18,19 +18,8 @@ I hope you are as excited as me to get started with R. Please read this document
 
 This is a hands-on workhop. Me and Jon will talk about some stuff, and then we will let you try things out.
 
-**Let's get started!**
-
-The first thing you need to do is install R and R studio (instructions below) then you want to download all the files for this workshop from this github page to your computer. To do that click on the green **Clone or download** button to the right side of your screen and select **Download ZIP**. Unzip this folder and put it somewhere you can easily access. This folder contains the follow files:
-
-- `Input` A folder containing datasets that we will import into R
-  - `irisdata.csv`
-  - `PlantGrowth.csv`
-- `RUsersGroup_BeginnerSession_2020.R` The script you will open in R and use in today's workshop
-- `RUsersGroup_BeginnerSession_2020.pdf` A handy pdf with the workshop script and code output 
-- `RUsersGroup_BeginnerSession_2020.Rmd` A markdown file which you wont need to use. 
-
 ## Installing R and R Studio
-Instructions courtesy of Data carpentries, see [here](https://mq-software-carpentry.github.io/r-ggplot-extension/setup.html) for full instruction and linux install 
+Instructions courtesy of Data carpentries, see [here](https://mq-software-carpentry.github.io/r-ggplot-extension/setup.html) for full instruction and linux install.
 
 ### Windows
 
@@ -60,5 +49,17 @@ Under Installers select **RStudio x.yy.zzz - Mac OS X 10.6+ (64-bit)** (where x,
 Double click the file to install RStudio
 Once it’s installed, open RStudio to make sure it works and you don’t get any error messages.
 
+### Let's get started!
+
+The first thing you need to do is install R and R studio (instructions above) then you want to download all the files for this workshop from this github page to your computer. To do that click on the green **Clone or download** button to the right side of your screen and select **Download ZIP**. Unzip this folder and put it somewhere you can easily access. This folder contains the follow files:
+
+- `Input` A folder containing datasets that we will import into R
+  - `irisdata.csv`
+  - `PlantGrowth.csv`
+- `RUsersGroup_BeginnerSession_2020.R` The script you will open in R and use in today's workshop
+- `RUsersGroup_BeginnerSession_2020.pdf` A handy pdf with the workshop script and code output 
+- `RUsersGroup_BeginnerSession_2020.Rmd` A markdown file which you wont need to use. 
+
+To start, open the workshop script in R (RUsersGroup_BeginnerSession_2020.R). It should open automatically in R.
 
 **Have fun!**
