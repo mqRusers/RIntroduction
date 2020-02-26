@@ -1,22 +1,107 @@
 # Macquarie R Users Group - An Introduction to R 2020
 
-## Section 1
 
 # Note: everything after # is considered a comment (simple notes), NOT code.
 
+### What is R?
+
+# R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS." (CRAN)
+
+# In its broadest definition, R is a computer language that allows the user to program algorithms and use tools that have been programmed by others." (Zuur et al 2009 - A Beginner's Guide to R:14)
+
+# But what can it actually do?
+
+# R as a [calculator](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20R%20as%20a%20calculator.html)
+# Manipulate data
+# Conduct any statistical test
+# Import software 'packages' with specialised functions (more on this later)
+# Automate analyses
+# Design simple or complicated graphs
+
+
+# Why you should use it?
+
+# It is free and open-source
+# R has been receiving contributions from many programmers around the globe
+# [Listed as 3rd most used languages in Data Science](https://businessoverbroadway.com/2019/01/13/programming-languages-most-used-and-recommended-by-data-scientists/)
+# Massive community for online support
+# Very specific problems are mostly addressed with a package
+# It is widely used with many books published in the last years
+
+
+# Awesome! Why is not everyone using it?
+
+# A bit of a learning curve
+# Coding necessary (eh!)
+
+# BUT 
+
+# The most basic syntax (grammar) can be used for most of the things in R
+# R studio makes it easier to code in R, providing a user friendly interface
+# Once you get used to programming you can adopt new languages easier
+
+# There are a lot of online courses, videos and texts available for understanding R, its packages etc.
+
+
+#Let's have a look at R Studio
+
+# Console: your code is run here and you will see the results of your coding.
+# R-Script: your code is written and saved here, just like in a normal text-document.
+# Environment: all the loaded data and objects are listed here, you can even take a look at your data tables or the structure of your data.
+# History: shows the history of your executed code.
+# Files: what is in your source folder, i.e. is my data table in the folder?
+# Plots: this is where your plots will be shown, you can also export them from here (but there are better ways).
+# Packages: load and search for new packages and your installed packages are listed here.
+# Help: look for help or specific vignettes (support documents) for each package. Also access via ?'function'
+# Viewer: can be used to view local web content for web graphics generated using packages like googleVis, htmlwidgets, and rCharts, or even a local web application created using Shiny, Rook, or OpenCPU.
+
+# R-studio gives you a more intuitive interface and takes the scariness out of coding. It also provides functions that simplify the process of developing your code. 'Tab completion' is one of such function.
+
+
+# Some basic R syntax: objects and functions and arguments
+
+# output<-function1(argument1, argument2, ...) + function2(argument)
+
+# flat_white <- froth(milk, hot) + extract(coffee)
+# flat_white = froth(milk, hot) + extract(coffee)
+
+# verb(argument)
+# argument can be a "noun" (being acted upon) or an "adverb" (modifying its behavior)
+
+# Example1: boiling milk normally
+# boiled_milk <- boil (milk)
+
+# Example2: boiling milk for a long time
+# boiled_milk <- boil (milk, long_time)
+ 
+# froth() and extract() are *functions*, milk, hot and coffee are *arguments*
+
+# functions are sets of instructions used to do something to arguments. They can be stored in an *object* (flat_white). Objects can be used as arguments.
+
+# arguments are used to tell functions what *objects* to act on, and any details of how to perform the action
+
+# Functions need arguments to fulfill the purpose they were designed for. e.g. froth() needs to know what kind of milk to froth and how hot to make it.
+
+# packages are precoded sets of instructions (functions) that were written by someone and are available for everyone to use*
+
+
+
+
+
+## Section 1
+
 ### Goals
 
-# 1. Getting comfortable with R Studio Interface and finding out what it is at all.
+# 1. Getting comfortable with R Studio Interface and finding out what it is all about.
 # 2. Using basic commands.
 # 3. Loading and saving data.
 # 4. Basic statistics.
 # 5. Plotting.
 # 6. Not being scared of coding!
 
-
 # 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
-
-a <- 1+2 # here R works ike a calculator
+ 
+a <- 1+2 # here R works like a calculator
 a        # print a to see what it contains
 
 
@@ -94,9 +179,10 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # 6. Not being scared of coding!
 
 # Save your current script: File > Save 
-# Create a new project folder for our R users introduction course: File/R project > New project > New directory > Browse and name it: 'My first R project'.
+# Create a new project folder for our R users introduction course: File/R project > New project > New directory > New project > Browse and name it: 'My first R project'.
 # Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
-# Move our data to input folder and move our script RUsersGroup_BeginnerSession_2020.R to the script folder
+# Move both files datasets found within input folder from the original workshop folder to our new input folder we just created.
+# Move our script RUsersGroup_BeginnerSession_2020.R to the newly created script folder and reopen it
 
 
 # We can also create new scripts: File > New File > R script
@@ -107,12 +193,20 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
 # it is the case with iris and PlantGrowth datasets, so they can be loaded using:
 data(iris)
-data(plantgrowth)
+data(PlantGrowth)
 
 # or
 
 irisdata <- read.csv("input/irisdata.csv") 
 irisdata
+
+# We used class to see how our object was structured e.g. vectors, matrices, dataframes. When working with dataframes we can use str() to find the class of each column
+
+str(irisdata)
+
+head(irisdata)
+tail(irisdata)
+
 # Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
 # 2. We can easily call some summary stats now.
@@ -128,28 +222,29 @@ irisdata[1,1] # value at row 1, column 1
 
 irisdata[,1:3] # all values in columns 1 to 3
 
+irisdata[c(1,3,5), c(4,6)] # value at row 1, 3, and 5, column 4 and 6
 
 irisdata['Species'] # all values in column with column name 'Species'
 
 
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 
-
 as.matrix(irisdata)$Sepal.Length
-
+# this won't work, atomic vectors = (logical, integer, double (sometimes called numeric), and character)
 
 as.matrix(irisdata)[,2:5]
 
-
+#why does this not work? 
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
 
 
 dim(irisdata) #shows dimensions 
 
-# What is the X column?
+# What is the X column in irisdata?
+
 irisdata
 
-# We can remove this by accessing only values from columns 2 to 6
+# We can remove the X column by accessing only values from columns 2 to 6
 
 irisdata[,2:6]
 
@@ -157,9 +252,10 @@ irisdata[,2:6]
 # Give this a go below and assign it to the object called iris_without_rownames
 
 
-iris_without_rownames <- irisdata[,-1]
+iris_without_rownames <- irisdata[]
 iris_without_rownames
 
+# Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!**
 
 # 4. If we make any changes to our data, we can save our new data in a spreadsheet.
 
@@ -168,9 +264,9 @@ write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 ### Last part! Our first data analysis!
 
-# 1. Now we want to read in a new dataset called plantgrowth.csv found in the input folder. Give this a go your yourself!
+# 1. Now we want to read in a new dataset called PlantGrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("input/plantGrowth.csv") 
+plant.df <- read.csv("") 
 plant.df
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -197,13 +293,23 @@ dev.off() # close window to finish saving
 
 # 4. Start statistical analysis. This is a simple linear model with an ANOVA. 
 
-plant.mod1 = lm(weight ~ group, data = plant.df) 
-# we're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
+plant.mod1 <- lm(weight ~ group, data = plant.df) 
+
+# We're using lm() to create a pretty different object called a list, which has lots of data in it, organised in a defined structure.
 # Variable on the left-hand side of a tilde ( ~ ) (weight) is the dependent variable, while the right-hand side are the independent variables
+
+class(weight ~ group) # this is our formula
+
+plant.mod1
+
 
 summary(plant.mod1) # summary() extracts some of this data and prints it out neatly for us
 
 anova(plant.mod1)
+
+names(plant.mod1)
+
+plant.mod1$coefficients
 
 
 # 5. There are hundreds of packages in R that have ready functions for us to use. All you need to do is look up which package you need, install it and load it into R. 
