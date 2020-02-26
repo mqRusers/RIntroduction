@@ -16,30 +16,35 @@
 
 # 1. We can assign (<-) a basic calculation to the object 'a' and call the content of 'a'. Execute your code using Ctrl+Enter
 
-a <- 1+2 # here R works ike a calculator
+a <- 1 + 2 # here R works ike a calculator
 a        # print a to see what it contains
 
 
+# Talk here about what a function is (sqrt) and do some stuff with it.
+# Ex 1! Get comfortable with using the command line
+
 # 2. We use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
 
-x <- c(1,2,3,4) # 'c' is a function that combines values into the vector x (object), the numbers are arguments
+x <- c(1, 2, 3, 4) # 'c' is a function that combines values into the vector x (object), the numbers are arguments
+
+# Talk here about what a character is
 
 # A vector is a sequence of data #components# of the same basic type (i.e. numbers or letters)
 
 
-# 3. Using function mean (), we can extract the mean of our vector. 
+# 3. Using function mean (), we can extract the mean of our vector.
 
 mean(x) # mean() is a function
 
 
-# 4. Create two vectors (they are going to be numeric in our case) using seq() and assign them the object seq_a and seq_b. object seq_a contains a vector with the components 1 to 10 and is increasing by 1. seq_b contains the components 1 to 25 and increases by 2. If you are not sure how to use a function, such as seq(), just call ?seq and have a look what arguments can be used. 
+# 4. Create two vectors (they are going to be numeric in our case) using seq() and assign them the object seq_a and seq_b. object seq_a contains a vector with the components 1 to 10 and is increasing by 1. seq_b contains the components 1 to 25 and increases by 2. If you are not sure how to use a function, such as seq(), just call ?seq and have a look what arguments can be used.
 
-seq_a <- seq(from=1,to=10,by=1)
-seq_b <- seq(from=1,to=25,by=2)
+seq_a <- seq(from = 1, to = 10, by = 1)
+seq_b <- seq(from = 1, to = 25, by = 2)
 
 # 5. Using cbind() you can bind two vectors to create a #matrix# (a kind of table). Use cbind() to bind seq_a and seq_b. Assign it to the object 'c'. For help, call ?cbind
 
-c <- cbind(seq_a,seq_b)
+c <- cbind(seq_a, seq_b)
 
 # 6. Oops! Let's see what went wrong. Can you decipher the error message? Have a look at seq_a and seq_b. Just type seq_a and seq_b and execute both. No worries, debugging (resolving errors) is a major part of programming.
 
@@ -53,10 +58,10 @@ length(seq_b)
 
 # 8. To cbind() two vectors they have to have the same length. Let's overwrite seq_a and create a vector of the same length as seq_b. Check if the length is matching the other vector and bind them using cbind(). Assign this object to a new object, 'c'. What class has 'c'? Check it!
 
-seq_a<- seq(1,13,by=1)
+seq_a <- seq(1, 13, by = 1)
 length(seq_a)
-c <- cbind(seq_a,seq_b)
-class(c) 
+c <- cbind(seq_a, seq_b)
+class(c)
 # class() can figure out if you are working with vectors, matrices, dataframes, lists etc....it can do more but this is all we need for now.
 
 # Note: The counterpart to cbind() is rbind() if you would like to connect rows instead of columns.
@@ -67,7 +72,14 @@ plot(c)
 
 # Note: If we wanted to, we could modify the appearance of this plot completely. Labelling axis, change tickmarks and intervals, add text or shapes...more #than you can think of now. With just a few lines of code we can create beautiful plots. Once a plot is coded we can use it over and over again and also easily #modify it. See here:##
 
-pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","green3","blue")[unclass(iris$Species)])
+pairs(
+  iris[1:4],
+  main = "Edgar Anderson's Iris Data",
+  pch = 21,
+  bg = c("red", "green3", "blue")[unclass(iris$Species)]
+)
+
+# Quiz: We'll do a lotto game! 6 out of 49
 
 ### What we have learned:
 
