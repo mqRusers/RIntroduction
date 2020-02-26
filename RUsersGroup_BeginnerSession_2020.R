@@ -2,6 +2,8 @@
 
 ## Section 1
 
+## Introduction
+
 ### Goals
 
 # 1. Getting comfortable with R Studio Interface and finding out what it is all about.
@@ -17,7 +19,7 @@ a <- 1 + 2 # here R works ike a calculator
 a        # print a to see what it contains
 
 
-# Talk here about what a function is (sqrt) and do some stuff with it.
+# Talk here about what a function is (sqrt) and do some stuff with it. talk about RStudio/R. let people ask questions.
 # Ex 1! Get comfortable with using the command line
 
 # 2. We use function c() to combine specific values into a vector. Assign this new vector to object 'x'.
