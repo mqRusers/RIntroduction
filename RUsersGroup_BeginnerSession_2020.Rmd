@@ -259,13 +259,13 @@ pairs(iris[1:4], main = "Edgar Anderson's Iris Data", pch = 21, bg = c("red","gr
 # it is the case with iris and PlantGrowth datasets, so they can be loaded using:
 data(iris)
 data(PlantGrowth)
-
-# or
-
+```
+* or
+```{r}
 irisdata <- read.csv("input/irisdata.csv") 
 irisdata
-
-# We used class to see how our object was structured e.g. vectors, matrices, dataframes. When working with dataframes we can use str() to find the class of each column
+```
+* We used class to see how our object was structured e.g. vectors, matrices, dataframes. When working with dataframes we can use str() to find the class of each column
 
 ```{r}
 str(irisdata)
@@ -274,7 +274,7 @@ head(irisdata)
 tail(irisdata)
 ```
 
-# Why using .csv instead of Excel sheets (.xls and .xlsx)?
+* Why using .csv instead of Excel sheets (.xls and .xlsx)?
 
 
 
@@ -326,16 +326,16 @@ irisdata[1, 1:6]
 dim(irisdata) #shows dimensions 
 ```
 
-# What is the X column in irisdata?
+* What is the X column in irisdata?
 ```{r}
 irisdata 
 ```
-# We can remove the X column by accessing only values from columns 2 to 6
+* We can remove the X column by accessing only values from columns 2 to 6
 ```{r}
 irisdata[,2:6]
 ```
-# There is another way to do this by selecting the column we would like to remove using a minus "-" 
-# Give this a go below and assign it to the object called iris_without_rownames
+* There is another way to do this by selecting the column we would like to remove using a minus "-" 
+* Give this a go below and assign it to the object called iris_without_rownames
 
 ```{r}
 iris_without_rownames <- irisdata[,-1]

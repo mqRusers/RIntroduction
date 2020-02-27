@@ -88,7 +88,7 @@ pairs(
 # Encounter error messages
 # Create some first data
 # Have an idea that there are different classes that R can use (different packages want different classes)
-# See what a basic plot looks like and how it could look like (Know that there are different ways/ packages of plotting something)
+# See what a basic plot looks like and how it could look like (know that there are different ways/ packages of plotting something)
 
 
 ## Section 2
@@ -97,7 +97,7 @@ pairs(
 
 ### Goals
 
-# 1. Getting comfortable with R Studio Interface and finding out what it is at all.
+# 1. Getting comfortable with R Studio Interface and finding out what it is all about.
 # 2. Using basic commands.
 # 3. Loading and saving data.
 # 4. Basic statistics.
@@ -108,16 +108,16 @@ pairs(
 # Create a new project folder for our R users introduction course: File/R project > New project > New directory > New project > Browse and name it: 'My first R project'.
 # Create 3 subfolders within the project and name them 'input', 'output' and 'scripts' 
 # Move both files datasets found within input folder from the original workshop folder to our new input folder we just created.
-# Move our script RUsersGroup_BeginnerSession_2020.R to the newly created script folder and reopen it
-
+# Move our script RUsersGroup_BeginnerSession_2020.R along to the newly created script folder and reopen it.
+# IF you like move the other two files RUsersGroup_BeginnerSession_2020.pdf and RUsersGroup_BeginnerSession_2020.Rmd to your project folder as they are good resources to come back to.
 
 # We can also create new scripts: File > New File > R script
 
-
 # 1. Let's import our data and see what it looks like
 
-# if the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
-# it is the case with iris and PlantGrowth datasets, so they can be loaded using:
+# If the dataset is build in R, it is unnecessary to export it as csv and import it, you just need the following function data()
+# It is the case with iris and PlantGrowth datasets, so they can be loaded using:
+
 data(iris)
 data(PlantGrowth)
 
@@ -152,7 +152,6 @@ irisdata[c(1,3,5), c(4,6)] # value at row 1, 3, and 5, column 4 and 6
 
 irisdata['Species'] # all values in column with column name 'Species'
 
-
 irisdata$Sepal.Length # all values in column with column name 'Sepal.length'
 
 as.matrix(irisdata)$Sepal.Length
@@ -162,7 +161,6 @@ as.matrix(irisdata)[,2:5]
 
 #why does this not work? 
 irisdata[1, 1:7] # first row only of values in columns 1 to 7
-
 
 dim(irisdata) #shows dimensions 
 
@@ -177,8 +175,7 @@ irisdata[,2:6]
 # There is another way to do this by selecting the column we would like to remove using a minus "-" 
 # Give this a go below and assign it to the object called iris_without_rownames
 
-
-iris_without_rownames <- irisdata[]
+iris_without_rownames <- irisdata[] # Have a go at this yourself!
 iris_without_rownames
 
 # Nice! We have learned a lot about manipulating data so far! Use R cheat sheets (just google R cheatsheets) to look up all those functions over and over again!**
@@ -192,7 +189,7 @@ write.csv(irisdata, 'output/new_irisdata_incl_rownames.csv')
 
 # 1. Now we want to read in a new dataset called PlantGrowth.csv found in the input folder. Give this a go your yourself!
 
-plant.df <- read.csv("") 
+plant.df <- read.csv("") # Have a go at this yourself!
 plant.df
 
 # 2. Clean the data up a bit and specify that the group is a factor variable.
@@ -208,6 +205,7 @@ boxplot(weight~group, plant.df)
 # 4. Create a folder to store the results. 
 
 # this line can be different for Mac users
+
 dir.create("output/plots")
 
 # And save it as a .pdf file in the output folder.
@@ -228,7 +226,6 @@ class(weight ~ group) # this is our formula
 
 plant.mod1
 
-
 summary(plant.mod1) # summary() extracts some of this data and prints it out neatly for us
 
 anova(plant.mod1)
@@ -237,19 +234,21 @@ names(plant.mod1)
 
 plant.mod1$coefficients
 
-
 # 5. There are hundreds of packages in R that have ready functions for us to use. All you need to do is look up which package you need, install it and load it into R. 
 
 # Here we will pratice installing a package called readr
 # You can think of installing package like apps on your phone, you only need to install it once but need to load it each time you want to use it 
 
 #install.packages('readr') #install
+
 library(readr) #load
 
 # Now all we have to do is use a function within the newly loaded package!
+
 irisdata <- read.csv("input/irisdata.csv") #old
 
 irisdata <- read_csv("input/irisdata.csv") #new
+
 irisdata
 
 
